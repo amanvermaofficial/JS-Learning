@@ -32,6 +32,8 @@ buttons.forEach(function (button) {
 
 ```javascript
 
+
+
 let button = document.getElementById('btn')
 
 button.addEventListener('click',function calculateBmi(){
@@ -48,7 +50,15 @@ button.addEventListener('click',function calculateBmi(){
 
      let bmi = (weight / ((height * height) 
     / 10000)).toFixed(2);
-
-    result.innerHTML = `Your BMI ${bmi}`
+    if(bmi<18.6){
+      result.innerHTML = `UnderWeight Your Bmi : ${bmi}`
+    }
+    if(bmi>18.6 || bmi<24.9){
+      result.innerHTML = `Normal Range Your Bmi : ${bmi}`
+    }
+    if(bmi>24.9){
+      result.innerHTML = `Overweight Your Bmi : ${bmi}`
+    }
+  
   }
 })
