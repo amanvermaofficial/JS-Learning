@@ -36,6 +36,9 @@ buttons.forEach(function (button) {
 
 let button = document.getElementById('btn')
 
+//This UseCase  will give you empty
+//let weight = parseInt(document.getElementById('weight').value)
+
 button.addEventListener('click',function calculateBmi(){
   let weight = parseInt(document.getElementById('weight').value)
   let height = parseInt(document.getElementById('height').value)
