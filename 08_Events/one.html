@@ -85,13 +85,13 @@
     //attachEvent()
     //jQuery- on
 
-    document.getElementById("owl").addEventListener(
-      "click",
-      function (e) {
-        console.log(e);
-      },
-      false
-    );
+    // document.getElementById("owl").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log(e);
+    //   },
+    //   false
+    // );
 
 
 
@@ -123,7 +123,7 @@
 
 
 
-    //Mouse Events = click, dblclick, mouseup, mousedown,mouseEnter,mouseOver& many more.
+    //Mouse Events = click, dblclick, mouseup, mousedown,mouseEnter,mouseOver & many more.
     //keyboard Events = (keydown, keypress, or keyup)
 
 
@@ -134,21 +134,58 @@
 
     clientBox = document.getElementById("client_box")
      
-    clientBox.addEventListener("click",(event)=> {
-      let x = event.clientX;
-      let y = event.clientY;
-      let text = "X coords: " + x + ", Y coords: " + y;
-      document.getElementById("demo").innerHTML = text;
-    })
+    // clientBox.addEventListener("click",(event)=> {
+    //   let x = event.clientX;
+    //   let y = event.clientY;
+    //   let text = "X coords: " + x + ", Y coords: " + y;
+    //   document.getElementById("demo").innerHTML = text;
+    // })
 
 //altKey ,ctrlKey,shiftKey pressed or not with mouse event
-    clientBox.addEventListener("click",function(e){
-        const ctrl = e.ctrlKey;
+    // clientBox.addEventListener("click",function(e){
+    //     const ctrl = e.ctrlKey;
 
-        document.getElementById("key").innerHTML="ctrl key pressed "+ctrl
-    })
+    //     document.getElementById("key").innerHTML="ctrl key pressed "+ctrl
+    // })
 
 
-     
+
+
+
+
+
+
+    //EventPropogation=>
+    // Propagation refers to how events travel through the Document Object Model (DOM) tree. The DOM tree is the structure which contains parent/child/sibling elements in relation to each other. You can think of propagation as electricity running through a wire, until it reaches its destination. The event needs to pass through every node on the DOM until it reaches the end, or if it is forcibly stopped.
+    
+    //EventPropogation has two context => Event Bubbling and Capturing
+    //mostly used in market => default(false/Event Bubbling )
+    // document.getElementById('images').addEventListener('click',function(e){
+    //   console.log("click inside the ul");
+    // },false)
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //   console.log("owl clicked");
+    //   //e.stopPropagation()//after this bubbling not going top
+    // },false)
+
+    //when we click owl image first call 'owl' & then "click inside ul"=>it is the bubbling like bubble bottom to top
+    //Capturing=> it works top to top to botom opposite working of bubbling
+
+   document.getElementById('google').addEventListener('click',(e)=>{
+    e.preventDefault();
+    e.stopPropagation();
+    console.log("google clicked");
+   })
+
+
+   document.querySelector("#images").addEventListener('click',function(e){
+    // console.log(e.target.parentNode);
+    console.log(e.target.tagName);
+    if(e.target.tagName==='IMG'){
+      let removeIt = e.target.parentNode;
+      removeIt.remove();
+   }
+
+   });
   </script>
 </html>
