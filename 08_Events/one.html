@@ -1,25 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>htnml Events </title>
-</head>
-<body style="background-color: #414141; color: aliceblue;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>htnml Events</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
     <h2>Amazing image</h2>
-    <div >
-        <ul id="images">
-            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
-            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
-            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
-            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
-            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
-            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
-        </ul>
-   </div>
-</body>
-<script>
-    //Js is sequenclly run programming 
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="200px"
+            id="photoshop"
+            src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="japan"
+            src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="river"
+            src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="owl"
+            src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="prayer"
+            src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <a style="color: aliceblue" href="https://google.com" id="google"
+            >Google</a
+          >
+        </li>
+      </ul>
+
+    </div>
+
+    <div id="client_box" style="border:1px solid black;padding:15px">
+        
+      <div>
+        <p>
+          Click anywhere in this document to get the x and y coordinates of the
+          mouse pointer, relative to the window.
+        </p>
+        <p id="demo">Coordinates:</p>
+        <p id="key">keys:</p>
+
+      </div>
+
+    </div>
+  </body>
+  <script>
+    //Js is sequenclly run programming
     //and events are also run in sequence
 
     // onclick="" in Html is not best approach.it will create problems
@@ -31,43 +85,70 @@
     //attachEvent()
     //jQuery- on
 
-    document.getElementById('owl').addEventListener('click',function(e){
+    document.getElementById("owl").addEventListener(
+      "click",
+      function (e) {
         console.log(e);
-    },false)
+      },
+      false
+    );
+
+
+
+
 
     //target
 
-    const ul = document.createElement("ul");
-    document.body.appendChild(ul);
+    // const ul = document.createElement("ul");
+    // document.body.appendChild(ul);
 
-    const li1 = document.createElement("li");
-    const li2 = document.createElement("li");
-    ul.appendChild(li1)
-    ul.appendChild(li2)
+    // const li1 = document.createElement("li");
+    // const li2 = document.createElement("li");
+    // ul.appendChild(li1);
+    // ul.appendChild(li2);
 
-    function hide(evt){
-        // evt.target refers to the clicked <li> element
-             // This is different than evt.currentTarget, which would refer to the parent <ul> in this context
-        evt.target.style.visibility = "hidden";
-    }
+    // function hide(evt) {
+    //   // evt.target refers to the clicked <li> element
+    //   // This is different than evt.currentTarget, which would refer to the parent <ul> in this context
+    //   evt.target.style.visibility = "hidden";
+    // }
 
-// Attach the listener to the list
-// It will fire when each <li> is clicked
+    // Attach the listener to the list
+    // It will fire when each <li> is clicked
 
-    ul.addEventListener("click",hide,false)
-
-    
-
-
-    
+    // ul.addEventListener("click", hide, false);
 
 
 
 
 
 
+    //Mouse Events = click, dblclick, mouseup, mousedown,mouseEnter,mouseOver& many more.
+    //keyboard Events = (keydown, keypress, or keyup)
 
-</script>
 
 
+
+    //clientX & clientY => it works with mouse events.it gives us coodinate according to viewport height & width(Browser)
+    //screenX & screenY => it works with mouse events.it gives us coodinate according to screen (tablet,pc.laptop,iphone screen)height & width
+
+    clientBox = document.getElementById("client_box")
+     
+    clientBox.addEventListener("click",(event)=> {
+      let x = event.clientX;
+      let y = event.clientY;
+      let text = "X coords: " + x + ", Y coords: " + y;
+      document.getElementById("demo").innerHTML = text;
+    })
+
+//altKey ,ctrlKey,shiftKey pressed or not with mouse event
+    clientBox.addEventListener("click",function(e){
+        const ctrl = e.ctrlKey;
+
+        document.getElementById("key").innerHTML="ctrl key pressed "+ctrl
+    })
+
+
+     
+  </script>
 </html>

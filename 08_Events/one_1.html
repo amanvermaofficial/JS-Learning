@@ -26,6 +26,11 @@ div {
       
       <button id="reset">Reset</button>
       <pre id="output"></pre> 
+
+
+      <div id="insert">
+        <div class="key" >Press any Key</div>
+    </div>
 </body>
 
 <script>
@@ -44,6 +49,15 @@ div {
             document.location.reload();
         })
     
+
+        //keyCode
+        const insert = document.getElementById("insert");
+
+window.addEventListener("keydown",(event)=>{
+    insert.innerHTML = event.code//keyA,controLeft
+    insert.innerHTML = event.keyCode//65,ascii value a
+    insert.innerHTML = event.key//g,a
+})
 
 </script>
 </html>
