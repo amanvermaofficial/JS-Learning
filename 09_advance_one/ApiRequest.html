@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<style>
+    body{
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    #userCard{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        width: 40%;
+        padding: 30px;
+    }
+    img{
+        width: 70%;
+        border-radius: 50%;
+    }
+</style>
+<body>
+    0	UNSENT	Client has been created. open() not called yet.
+    1	OPENED	open() has been called.
+    2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+    3	LOADING	Downloading; responseText holds partial data.
+    4	DONE The operation is complete.
+
+    <div id="userCard"></div>
+</body>
+<script>
+    // const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+    // const xhr = new XMLHttpRequest();
+    // xhr.open('GET',requestUrl);
+    // xhr.onreadystatechange=function(){
+    //     console.log(xhr.readyState);
+    //     if(xhr.readyState===4){
+    //         const data = JSON.parse(this.responseText)
+    //         console.log(typeof data);
+    //         console.log(data.followers);
+    //         console.log(data.avatar_url);
+    //     }
+    // }
+    // xhr.send();
+
+
+
+    //assignment
+
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET',requestUrl);
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);
+        if(xhr.readyState===4){
+            const randomUserData = JSON.parse(this.responseText)
+            userHitesh(randomUserData);
+        }
+    }
+    xhr.send();
+
+
+
+    const userCard=document.querySelector("#userCard")
+      function userHitesh(userData) {
+        userCard.innerHTML = `
+        
+            <img src="${userData.avatar_url}" alt="hiteshchoudhary">
+       
+        <div class="contentSection">
+            <h1>${userData.login}</h1>
+            <h3>Followers: ${userData.followers}</h3>
+        </div>
+        `
+      }
+
+</script>
+</html>
