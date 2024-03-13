@@ -3,7 +3,7 @@ let accountEmail = "amn.lohaniwal@gmail.com"
 var accountPassword = "12345"
 
 accountCity ="Jaipur"
-let accountState;
+let accountState;//if we leave the variable only declare it gives us => Undefined
 // accountId = 2 // not allowed
 accountEmail = "hc@hc.com"
 accountPassword = "21212121"
