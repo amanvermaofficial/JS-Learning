@@ -10,7 +10,7 @@ const gameName = new String('hitesh-hc-com')
 // console.log(gameName.charAt(2));
 //  console.log(gameName.indexOf('t'));
 
-const newString = gameName.substring(0, 4)
+const newString = gameName.substring(0, 4)//0,1,2,3values are included
 // console.log(newString);
 
 const anotherString = gameName.slice(4, 8);

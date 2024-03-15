@@ -15,7 +15,7 @@ const hundreds = 10000;
 //****************  Maths  *************************
 
 // console.log(Math);
-// console.log(Math.abs(-4));
+// console.log(Math.abs(-4));//it -ve to +ve but +ve same as +ve
 // console.log(Math.round(4.5));
 // console.log(Math.ceil(4.3));
 // console.log(Math.min(4.9,8,7));
