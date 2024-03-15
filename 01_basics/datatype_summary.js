@@ -22,3 +22,29 @@
 // 2) Non-primitive Datatypes
 //        Arrays  =>  object
 //        Function  =>  function
+
+
+//++++++++++++++++++++++++++++
+
+//Stack(primitive) Heap(Non-Primitive)
+
+let myYoutubename ="hiteshchoudhry"
+
+let anothername=myYoutubeChannel//here it is primitive its get a copy of a value(myYoutubeChannel) not refrence
+anothername="chaiOrcode"
+
+console.log(myYoutubename);//"hiteshchoudhry"
+console.log(anothername);//"chaiOrcode", So now myYoutubeChannel is not change
+
+//(Non-Primitive)
+
+let userOne = {
+    email:"user@google.com",
+    upi:"use@ybl"
+}
+
+let userTwo = userOne;
+userTwo.email="hitesh@google.com"
+
+console.log(userOne);//"hitesh@google.com"
+console.log(userTwo);//"hitesh@google.com",Memory is change because hame refrence mila h memory ka na ki copyValue 
