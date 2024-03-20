@@ -1,7 +1,12 @@
 //singleton
 //object.create
 
+//if we are declare objects like literals nhi bnte
+//or constructor ke through bnte hai 
+
+
 //object.literals
+
 const mySym = Symbol("key1")
 
 const JsUser={
@@ -31,7 +36,7 @@ JsUser.greeting = function(){
     console.log("Hello JS user");
 }
 JsUser.greetingTwo = function(){
-    console.log(`Hello Js User ${this.name}`);
+    console.log(`Hello Js User ${this.name} Bsckticks string interpulation`);
 }
 console.log(JsUser.greetingTwo())
 console.log(JsUser.greeting());

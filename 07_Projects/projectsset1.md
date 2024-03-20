@@ -206,6 +206,86 @@ window.addEventListener('keydown',(e)=>{
   </div>`
 })
 
+```
+
+## project 9
+
+```javascript
+const cursor = document.querySelector('.cursor');
+// an array of 10 colors in hex value
+const colors = [
+  '#FF6633',
+  '#FFB399',
+  '#FF33FF',
+  '#FFFF99',
+  '#00B3E6',
+  '#E6B333',
+  '#3366E6',
+  '#999966',
+  '#99FF99',
+  '#B34D4D',
+];
+function update(e){
+  cursor.style.left = e.clientX+"px"
+  cursor.style.top = e.clientY+"px"
+
+  let index = Math.floor(Math.random()*colors.length)
+  console.log(index)
+  cursor.style.backgroundColor=colors[index]
+}
+window.addEventListener("mousemove",update)
+// add circle to cursor and change it's color as cursor moves on the screen. Pick color from these array
+
+```
+
+## project 10
+```javascript
+
+const btn = document.querySelector('#emoji');
+const emojis = [
+  '😆',
+  '😅',
+  '🤣',
+  '😂',
+  '😀',
+  '🤑',
+  '🤨',
+  '🙂',
+  '😊',
+  '😗',
+  '😛',
+  '😏',
+  '🤥',
+  '😴',
+  '🥺',
+  '😧',
+  '😇',
+  '😳',
+  '🙃',
+  '🥴',
+  '🧐',
+  '🤨',
+  '😒',
+  '🤔',
+  '🤭',
+  '🥰',
+  '🤐',
+  '👀',
+  '🤔',
+  '🤪',
+  '🥲',
+  '😃',
+  '😁',
+  '😬',
+];
+//As a user hover the mouse over emoji, get a new emoji. As the user moves away mouse turn it into gray-scale
+btn.addEventListener("mouseover",(e)=>{
+  let index=Math.floor(Math.random()*emojis.length)
+  btn.textContent=emojis[index]
+})
+```
+
+
 
 
 
