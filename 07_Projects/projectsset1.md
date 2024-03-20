@@ -285,6 +285,35 @@ btn.addEventListener("mouseover",(e)=>{
 })
 ```
 
+## project 15
+
+```javascript
+const title = document.getElementById('title');
+const author = document.getElementById('author');
+const year = document.getElementById('year');
+const bookList = document.getElementById('book-list');
+const btn = document.querySelector('.btn');
+
+btn.addEventListener('click', function (e) {
+  e.preventDefault()
+if(title.value==""||author.value==""||year.value==""){
+        alert("Please Fill allField");
+}
+else{
+  const section = document.createElement("section")
+  bookList.appendChild(section);
+  section.innerHTML=
+  `<div>${title.value}</div>
+   <div>${author.value}</div>
+   <div>${year.value}</div>
+  `
+}
+title.value=""
+author.value=""
+year.value=""
+});
+
+
 
 
 
