@@ -285,6 +285,52 @@ btn.addEventListener("mouseover",(e)=>{
 })
 ```
 
+## project 11
+```javascript
+const btns = document.querySelectorAll(".btn")
+const output = document.getElementById("output-field")
+const input = document.getElementById("input-field")
+
+btns.forEach((btn)=>{
+  btn.addEventListener("click",(e)=>{
+
+     if(btn.classList.contains("uppercase")){
+      output.innerHTML=input.value.toUpperCase()
+     }
+     else if(btn.classList.contains("lowercase")){
+      output.innerHTML=input.value.toLowerCase()
+     }
+     else if(btn.classList.contains("capitalize")){
+      output.innerHTML=toCapt(input.value)
+     }
+     else if(btn.classList.contains("bold")){
+      output.style.fontWeight = "bold"
+      output.innerHTML=input.value
+     }
+     else if(btn.classList.contains("italic")){
+      output.style.fontStyle = "italic"
+      output.innerHTML=input.value
+     }
+     else if(btn.classList.contains("underline")){
+      output.style.textDecoration = "underline"
+      output.innerHTML=input.value
+     }
+
+     input.value=""
+  })
+})
+
+function toCapt(sentence){
+  const splitArray = sentence.split(" ");
+  const convertedWords = splitArray.map((word)=>{
+    return word.charAt(0).toUpperCase()+word.slice(1).toLowerCase();
+  })
+  return mySen = convertedWords.join(" ")
+}
+
+```
+
+
 ## project 15
 
 ```javascript
