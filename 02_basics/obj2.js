@@ -65,6 +65,7 @@ const {courseInstructor:instructor} = course
 
 console.log(instructor)
 
+//json=>
 
 // {
 //     "name": "hitesh",
