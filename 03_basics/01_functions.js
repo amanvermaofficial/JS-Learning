@@ -5,13 +5,16 @@ function sayMyName(){
     console.log("E");
     console.log("S");
     console.log("H");
-}
-// sayMyName()
+} //it is function defination
+
+// sayMyName()//it is function refrence => sayMyName or executionsayMyName
 
 // function addTwoNumbers(number1, number2){
 
 //     console.log(number1 + number2);
 // }
+// const result =addTwoNumbers(3,4)
+// console.log(result);output => undefined(because function nothing to return)
 
 function addTwoNumbers(number1, number2){
 
