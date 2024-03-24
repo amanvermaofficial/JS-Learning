@@ -35,10 +35,14 @@ function loginUserMessage(username = "aman"){
 
 // console.log(loginUserMessage("hitesh"))
 
-
+// function calculateCart(...num1){
+//     return num1; 
+// }//...num1=> rest or spread operator (depand on using case)
+//output=>[67,200,400]
 function calculateCart(val1 ,...num1){
     return num1; 
 }
+//output=67,[200,400]
 console.log(calculateCart(67,200,400));
 
 const user ={
