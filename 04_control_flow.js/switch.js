@@ -23,3 +23,5 @@ switch (month) {
         console.log("default case match");
     
 }
+
+//if any condition is true or we can not put break then after the true conditions ,all conditon are print as well as true condition except defualt.
