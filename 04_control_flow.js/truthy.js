@@ -30,6 +30,9 @@ console.log("Object is empty")
 
 let val;
 // val=5??10
+//Que= out=5,?? sense hi kyaaa hua jab firs value jaani thi?
+//ans=database or apppwrite vgera m directly response nhi milta h ,hmko 2 values milti h ,ho skta hai hmko null response mil jaye,ya undefined aa jay usse pura code structure presan ho skta hai if null hai to null assign krdu phir uske hisab se case adjust adjust krlu,undefined h to theeck varna m koi value assign krlu 
+
 // val=null??10
 // val = undefined??20
 // val = null??10??20
