@@ -7,6 +7,8 @@
 // } )
 
 // console.log(values);
+//ForEach does not return any value when it's return any value when it's assigned on variable (undefined)
+
 
 const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -15,7 +17,7 @@ const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 // })
 
 // console.log(newNums);
-
+//filter method is also used call back fn and return the values whre foreach not.
 // newNums=[]
 
 // myNums.forEach((num)=>{
