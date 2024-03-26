@@ -32,10 +32,10 @@
     tit.style.backgroundColor = 'green'//it set the backgroundcolor of green
     tit.style.padding = "15px"//it set the padding
 
-
-    tit.innertext //=>display only on showing content on display
-    tit.innerContent //=> display all content that is display or not on screen  
-    tit.innerHTML //gives us complete Html value
+    
+    tit.innertext //=>display only on showing content on display//output=>`DOM learning on Chai aur  code`
+    tit.textContent //=> display all content that is display or not on screen // output=> `DOM learning on Chai aur  code test text` 
+    tit.innerHTML //gives us complete Html value//>output=>`DOM learning on Chai aur  code <span style="display: none;">Test text</span>`
 
     // ******** QuerySelector**** in this uses of css selector like #element or .element
 
@@ -50,7 +50,7 @@
 
     const myul=document.querySelector('ul')
     let tempList=document.querySelectorAll('li')//it gives us nodelist not an array
-    // tempList.style.work//=>it does not work
+    // tempList.style.color='green'//=>it does not work
     tempList[0].style.color="green"
     tempList.forEach((l)=>{
         l.style.backgroundColor = "yellow"
