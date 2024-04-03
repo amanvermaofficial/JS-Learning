@@ -1,3 +1,5 @@
+// a Promise is an object that will produce a single value some time in the future. If the promise is successful, it will produce a resolved value, but if something goes wrong then it will produce a reason why the promise failed. 
+//history-jab promises js m available nhi the js mein,jb bi bhut saara kaam async hota tha,Q or BlueBird library use hoti usme fetch catch then saara kaam hota tha
 const promiseOne = new Promise((resolve,reject)=>{
     //Do aync task
     //db calls.cryptography,network
@@ -7,6 +9,7 @@ const promiseOne = new Promise((resolve,reject)=>{
     },1000 )
 })
 
+//.then conection with resolve
 promiseOne.then(function(){
     console.log('Promise consumed')
 })
