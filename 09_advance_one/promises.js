@@ -2,7 +2,7 @@
 //history-jab promises js m available nhi the js mein,jb bi bhut saara kaam async hota tha,Q or BlueBird library use hoti usme fetch catch then saara kaam hota tha
 const promiseOne = new Promise((resolve,reject)=>{
     //Do aync task
-    //db calls.cryptography,network
+    //db calls.cryptography,network/these things takes time
     setTimeout(function(){
         console.log('Async task is complete');
         resolve();
@@ -51,10 +51,15 @@ setTimeout(function(){
 promiseFour.then((user)=>{
     console.log(user);
     return user.username;
-}).then((username)=>{
+})
+.then((username)=>{
     console.log(username);
-}).catch((error)=>{
+})
+.catch((error)=>{
     console.log(error);
+})
+.finally(()=>{
+    console.log("The promise is either reesolve or rejectd")
 })
 
 
@@ -77,7 +82,7 @@ async function consumePromiseFive(){
     } catch (error) {
         console.log(error);
     }
-}
+}//async await does not handle directly error so that try or catch use karna padta h
 
 
 consumePromiseFive()
