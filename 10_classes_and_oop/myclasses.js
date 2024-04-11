@@ -1,6 +1,7 @@
 //ES6
 
 // class User{
+//constructor kab call hota hai?=>jaise hi class se koi obj initillize hoga,new keyworrd jaise hi kaam mein lenge ,constructor apne aap call hojayega
 //     constructor(username,email,password){
 //         this.username=username;
 //         this.email=email;
