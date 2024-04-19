@@ -417,6 +417,24 @@ btn.addEventListener("click",(e)=>{
   })
 })
 
+
+//2nd method
+
+// btn.addEventListener("click",(e)=>{
+// async function getCat(){
+//   try{
+//     const response = await fetch(url);
+//     const data=await response.json();
+//     container.innerHTML=`<img class="random-cats cats"  src=${data[0].url}>`
+//   }
+//   catch(error){
+//     console.log("E: ",error); 
+//   }
+// }
+// getCat();
+// })
+
+
 ```
 
 ## project 15
