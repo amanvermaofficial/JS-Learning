@@ -395,7 +395,29 @@ function toCapt(sentence){
 }
 
 ```
+## project 14
 
+```
+const url = 'https://api.thecatapi.com/v1/images/search';
+const img= document.querySelector("img")
+const container = document.querySelector(".container");
+const btn = document.querySelector(".btn")
+btn.addEventListener("click",(e)=>{
+  fetch(url)
+  .then((response)=>{
+  // console.log(response);
+  return response.json()
+  })
+  .then((data)=>{ 
+    console.log(data[0].url)
+    container.innerHTML=`<img class="random-cats cats"  src=${data[0].url}>`
+  })
+  .catch((error)=>{
+    console.log(error)
+  })
+})
+
+```
 
 ## project 15
 
