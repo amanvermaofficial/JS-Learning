@@ -397,7 +397,7 @@ function toCapt(sentence){
 ```
 ## project 14
 
-```
+```javascript
 const url = 'https://api.thecatapi.com/v1/images/search';
 const img= document.querySelector("img")
 const container = document.querySelector(".container");
