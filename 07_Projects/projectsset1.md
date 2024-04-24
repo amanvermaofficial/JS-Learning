@@ -274,7 +274,7 @@ else{
 },500)
 ```
 
-## project 9
+## project 9-mouseCircle
 
 ```javascript
 const cursor = document.querySelector('.cursor');
@@ -304,7 +304,7 @@ window.addEventListener("mousemove",update)
 
 ```
 
-## project 10
+## project 10-Emoji
 ```javascript
 
 const btn = document.querySelector('#emoji');
@@ -351,7 +351,7 @@ btn.addEventListener("mouseover",(e)=>{
 })
 ```
 
-## project 11
+## project 11 - textEditor
 ```javascript
 const btns = document.querySelectorAll(".btn")
 const output = document.getElementById("output-field")
@@ -395,7 +395,7 @@ function toCapt(sentence){
 }
 
 ```
-## project 12
+## project 12-Random Image
 ```javascript
 const baseURL = 'https://source.unsplash.com/all/300x300';
 
@@ -418,7 +418,7 @@ btn.addEventListener('click',(e)=>{
   getImg()
 })
 ```
-## project 14
+## project 14 - Cat Api
 
 ```javascript
 const url = 'https://api.thecatapi.com/v1/images/search';
@@ -460,7 +460,7 @@ btn.addEventListener("click",(e)=>{
 
 ```
 
-## project 15
+## project 15-ToDo List
 
 ```javascript
 const title = document.getElementById('title');
@@ -487,9 +487,66 @@ title.value=""
 author.value=""
 year.value=""
 });
+```
+
+## project 16 - Debouncing
+
+```javascript
+const url = "https://randomuser.me/api/?page=3&results=10&seed=abc";
+const inp = document.querySelector("#user-input")
+
+function debounce(func,timeout){
+    let timer;
+return (...args)=>{
+    clearTimeout(timer)
+    timer=setTimeout(()=>{
+        func.apply(this,args);
+    },timeout)
+}
+}
+
+// Function to fetch user data from randomuser.me API
+async function fetchUser(query){
+try {
+    const response = await fetch(url)
+    const data = await response.json();
+    // console.log(data.results[0].name);
+    return data.results.filter((user)=>{
+        const fullName = `${user.name.first}  ${user.name.last} `
+        return fullName.toLowerCase().includes(query.toLowerCase());
+    })
+} catch (error) {
+    console.log(error);
+}
+}
+
+// Function to display user cards
+function displayUser(users){
+const cardContainer = document.querySelector(".card-container");
+cardContainer.innerHTML="";
+users.forEach((user) => {
+    cardContainer.innerHTML+=` <div class="user-card">
+    <img src=  ${user.picture.large}  alt="">
+    <h2>${user.name.first} ${user.name.last}</h2>
+    <p>${user.email}</p>
+  </div>`
+});
+}
 
 
+// Function to handle search input
+const fetchedData = debounce(async function(e){
+    const query = e.target.value.trim();
+    if(query.length>0){
+        let userData = await fetchUser(query);
+        displayUser(userData)
+    }
+    else{
+        document.querySelector(".card-container").innerHTML=""
+    }
+},300)
 
-
+// Event listener for search input
+inp.addEventListener('input',fetchedData)
 
 
